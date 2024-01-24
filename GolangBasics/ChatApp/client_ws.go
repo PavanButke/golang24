@@ -32,7 +32,18 @@ func (c* client) read(){
 
 }
 
+func (c* client) write(){
+	//close if we have read
+	defer c.socket.Close()
 
-func main(){
+		for {
+			_, msg, err := s.socket.ReadMessage()
+			if err != nil{
+				return
+			}
+			//msg recieving from channel
+			c.room.forward <- msg
+		}
 
 }
+
