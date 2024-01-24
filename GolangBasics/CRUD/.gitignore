@@ -1,0 +1,33 @@
+# .gitignore
+
+# Ignore Go specific files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Ignore binary files
+*.jpg
+*.jpeg
+*.gif
+*.png
+*.ico
+*.pdf
+
+# Ignore go generated files
+*.pb.go
+
+# Ignore go test cache
+*.test
+
+# Ignore go coverage files
+*.out
+
+# Ignore go binaries
+/bin/
+/vendor/
+
+# Ignore go module files
+go.mod
+go.sum
