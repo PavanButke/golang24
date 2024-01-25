@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
+
 	"github.com/gorilla/websocket"
-	"os"
-	"os/signal"
-	"time"
+
 )
 
 type client struct{
@@ -22,7 +20,7 @@ func (c* client) read(){
 	defer c.socket.Close()
 
 		for {
-			_, msg, err := s.socket.ReadMessage()
+			_, msg, err := c.socket.ReadMessage()
 			if err != nil{
 				return
 			}
@@ -37,7 +35,7 @@ func (c* client) write(){
 	defer c.socket.Close()
 
 		for {
-			_, msg, err := s.socket.ReadMessage()
+			_, msg, err := c.socket.ReadMessage()
 			if err != nil{
 				return
 			}
